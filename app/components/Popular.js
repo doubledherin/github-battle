@@ -3,7 +3,6 @@ const PropTypes = require('prop-types')
 const api = require('./utils/api')
 
 function RepoGrid (props) {
-    console.log("props", props)
     return (
         <ul className="popular-list">
             {props.repos.map((repo, index) => {
@@ -46,7 +45,7 @@ function SelectedLanguage (props) {
             {languages.map(language => {
                 return (
                     <li
-                        style={ language === props.selectedLanguage ? { color: "red" } : { color: "black" }}
+                        style={ language === props.selectedLanguage ? { color: "#d0021b" } : { color: "black" }}
                         key={language}
                         onClick={props.onSelect.bind(null, language)}>
                             {language}
