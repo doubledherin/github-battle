@@ -4,6 +4,7 @@ import { battle } from './utils/api'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import PlayerPreview from './PlayerPreview'
+import Loading from './Loading'
 
 function Profile(props) {
     const info = props.info
@@ -76,7 +77,7 @@ class Results extends React.Component {
         const loading = this.state.loading
 
         if (loading) {
-            return <p>LOADING...</p>
+            return <Loading/>
         }
         if (error) {
             <div>

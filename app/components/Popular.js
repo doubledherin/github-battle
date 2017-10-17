@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { fetchPopularRepos } from './utils/api'
+import Loading from './Loading'
 
 function RepoGrid (props) {
     return (
@@ -95,7 +96,7 @@ class Popular extends React.Component {
             <div>
                 <SelectedLanguage onSelect={this.updateLanguage} selectedLanguage={this.state.selectedLanguage}/>
                 {!this.state.repos ? (
-                        <p>LOADING</p>
+                        <Loading />
                     ) : <RepoGrid repos={this.state.repos}/>
                 }
             </div>
