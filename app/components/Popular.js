@@ -1,6 +1,6 @@
-const React = require('react')
-const PropTypes = require('prop-types')
-const api = require('./utils/api')
+import React from 'react'
+import PropTypes from 'prop-types'
+import { fetchPopularRepos } from './utils/api'
 
 function RepoGrid (props) {
     return (
@@ -80,7 +80,7 @@ class Popular extends React.Component {
                 repos: null
             }
         })
-        api.fetchPopularRepos(language)
+        fetchPopularRepos(language)
             .then(repos => {
                 this.setState(function() {
                     return {
@@ -103,4 +103,4 @@ class Popular extends React.Component {
     }
 }
 
-module.exports = Popular
+export default Popular
